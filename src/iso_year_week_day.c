@@ -30,6 +30,12 @@ time_t	iso_year_week_day_tm (year_t year, month_t week, day_t day,
 		else
 			from_monday	+= -1;
 
+		// This looks wrong but mktime normalizes dates
+		// mktime(3)...
+		// "if structure members are outside their valid interval,
+		// "they will be normalized (so that, for example, 40 October
+		// "is changed  into  9  November)
+
 		tm.tm_mday += (day - 1) + (week - 1) * 7 - from_monday;
 		result	= mktime (&tm);
 		if (result != time_t_error && tp) {
