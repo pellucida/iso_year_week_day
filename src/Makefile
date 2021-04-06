@@ -5,6 +5,11 @@ PROGRAM	= convert_iso_year_week_day
 
 $(PROGRAM):	$(OBJ)
 
+test:	$(PROGRAM)	
+	@echo -n "GOT:  "
+	@./$(PROGRAM) -y 2020 -w 40 -d 4 -f %c
+	@echo "WANT: Thu Oct  1 12:00:00 2020"
+
 clean:
 	rm -f $(OBJ)
 

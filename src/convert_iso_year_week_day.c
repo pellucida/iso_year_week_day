@@ -1,5 +1,5 @@
 /*
-//
+// @(#) convert_iso_year_week_day.c
 */
 # include	<unistd.h>
 # include	<stdio.h>
@@ -9,7 +9,7 @@
 # include	"iso_year_week_day.h"
 
 static	void	Usage(){
-	fprintf (stdout, "Usage: iso_to_ymd -y year -w week -d day [-f fmt]\n");
+	fprintf (stdout, "Usage: convert_iso_year_week_day -y year -w week -d day [-f fmt]\n");
 	exit (EXIT_FAILURE);
 }
 int	main (int argc, char* argv[]){
