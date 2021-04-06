@@ -18,7 +18,7 @@ is a wrapper that passes such a NULL pointer to the previous function.
 ````
 convert_iso_year_week_day -y year -w week -d day [-f strftime_template]
 ````
-is a simple program that converts the ISO date to +%Y-%m-%d by default or
+is a simple program that converts the ISO date to <b>+%Y-%m-%d</b> by default or
 any valid date-time format that <i>strftime(3)</i> understands.
 
 ## Example
