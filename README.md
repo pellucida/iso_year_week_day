@@ -26,3 +26,5 @@ any valid date-time format that <i>strftime(3)</i> understands.
 convert_iso_year_week_day -y 2020 -w 40 -d 4 -f '%c'
 Thu Oct  1 12:00:00 2020
 ````
+## Notes
+Depends on the stdc library routine <i>mktime(3)</i>.
