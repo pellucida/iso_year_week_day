@@ -16,6 +16,12 @@ time_t  iso_year_week_day (int year, int week, int day);
 is a wrapper that passes such a NULL pointer to the previous function.
 
 ````
+time_t	iso_year_begins (int year, struct tm* tm);
+````
+calculates the first day (Monday) of the first ISO week of <i>year</i>
+returning time_t of noon on that day and in <i>tm</i> if supplied.
+
+````
 convert_iso_year_week_day -y year -w week -d day [-f strftime_template]
 ````
 is a simple program that converts the ISO date to <b>+%Y-%m-%d</b> by default or

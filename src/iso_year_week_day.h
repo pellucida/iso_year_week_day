@@ -14,9 +14,11 @@ typedef	int	week_t;
 typedef	int	day_t;
 static	const	time_t	time_t_error	= (-1);
 
-time_t	iso_year_week_day_tm (year_t year, month_t week, day_t day,
+time_t	iso_year_begins (year_t year, struct tm* tp);
+
+time_t	iso_year_week_day_tm (year_t year, week_t week, day_t day,
 				 struct tm* tmp);
 
-time_t	iso_year_week_day (year_t year, month_t week, day_t day);
+time_t	iso_year_week_day (year_t year, week_t week, day_t day);
 
 # endif
