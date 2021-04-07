@@ -8,6 +8,12 @@
 // year, week, day -> seconds since epoch (time_t) AND time_t -> struct tm
 // On ERROR returns (-1)
 
+// The first ISO week (01) is the first week in a calendar year to contain
+// a Thursday. This is equivalent to finding the first week containing Jan 04.
+// ie If the first Thu is Jan 01 => Sun is Jan 04 
+//			  Jan 07 => Mon is Jan 04
+
+ 
 time_t	iso_year_week_day_tm (year_t year, month_t week, day_t day,
 	struct tm* tp)
 {
