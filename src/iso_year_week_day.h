@@ -21,4 +21,6 @@ time_t	iso_year_week_day_tm (year_t year, week_t week, day_t day,
 
 time_t	iso_year_week_day (year_t year, week_t week, day_t day);
 
+time_t	iso_year_month_day_week_dow (year_t year, month_t month, day_t day,
+					week_t* week, day_t* dow);
 # endif
