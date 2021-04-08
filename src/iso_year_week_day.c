@@ -14,7 +14,8 @@
 
 time_t	iso_year_begins (year_t year, struct tm* tp) {
 	struct	tm	tm	= { .tm_year = year - 1900,
-				.tm_mon = 0, .tm_mday = 4, .tm_hour = 0, }; 
+				.tm_mon = 0, .tm_mday = 4, .tm_hour = 0,
+				.tm_isdst = 0, }; 
 	
 	time_t	result	= mktime (&tm);
 	if (result != time_t_error) {
