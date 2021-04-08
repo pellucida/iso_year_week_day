@@ -1,7 +1,7 @@
 # iso_year_week_day
 Short routine to convert ISO-8601 year-week-day to time_t
 
-For detail of ISO-8601 see [https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
+For details of ISO-8601 see [https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
 Disk drive manufacturing dates seem to be ISO (year, week, day) which isn't altogether obvious.
 
