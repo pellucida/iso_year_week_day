@@ -14,7 +14,7 @@
 
 time_t	iso_year_begins (year_t year, struct tm* tp) {
 	struct	tm	tm	= { .tm_year = year - 1900,
-				.tm_mon = 0, .tm_mday = 4, .tm_hour = 12, }; 
+				.tm_mon = 0, .tm_mday = 4, .tm_hour = 0, }; 
 	
 	time_t	result	= mktime (&tm);
 	if (result != time_t_error) {
@@ -40,7 +40,9 @@ time_t	iso_year_begins (year_t year, struct tm* tp) {
 // year, week, day -> seconds since epoch (time_t) AND time_t -> struct tm
 // On ERROR returns (-1)
 
-time_t	iso_year_week_day_tm (year_t year, week_t week, day_t day,
+
+time_t	iso_year_week_day_hour_min_sec_tm (year_t year, week_t week, day_t day,
+	hour_t hour, minute_t min, sec_t sec,
 	struct tm* tp)
 {
 	struct	tm	tm;
@@ -54,12 +56,28 @@ time_t	iso_year_week_day_tm (year_t year, week_t week, day_t day,
 		// "is changed  into  9  November)
 
 		tm.tm_mday	+= (week-1)*7 + (day-1);
+		tm.tm_hour	= hour;
+		tm.tm_min	= min;
+		tm.tm_sec	= sec;
+		tm.tm_isdst	= 0;
 		result		= mktime (&tm);
 		if (result != time_t_error && tp) {
 			*tp	= tm;
 		}
 	}
 	return	result;
+}
+time_t	iso_year_week_day_tm (year_t year, week_t week, day_t day,
+	struct tm* tp)
+{
+	return	iso_year_week_day_hour_min_sec_tm (year, week, day,
+			0, 0, 0, tp);
+}	
+time_t	iso_year_week_day_hour_min_sec (year_t year, week_t week, day_t day,
+		hour_t hour, minute_t min, sec_t sec)
+{
+	return	iso_year_week_day_hour_min_sec_tm (year, week, day,
+			hour, min, sec, 0);
 }
 time_t	iso_year_week_day (year_t year, week_t week, day_t day) {
 	return	iso_year_week_day_tm (year, week, day, 0);

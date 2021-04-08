@@ -16,8 +16,8 @@ $(CONVERT_MONTH_DAY):	$(CONVERT_MONTH_DAY_OBJ) $(OBJ1) $(OBJ2)
 
 test:	$(CONVERT_WEEK_DOW) $(CONVERT_MONTH_DAY)	
 	@echo -n "GOT:  "
-	@./$(CONVERT_WEEK_DOW) -y 2020 -w 40 -d 4 -f %c
-	@echo "WANT: Thu Oct  1 12:00:00 2020"
+	@./$(CONVERT_WEEK_DOW) -y 2020 -w 40 -d 4 -h 12 -m 30 -s 30 -f %c
+	@echo "WANT: Thu Oct  1 12:30:30 2020"
 	@echo -n "GOT:  "
 	@./$(CONVERT_MONTH_DAY) -y 2020 -m 10 -d 1
 	@echo "WANT: 2020-W40-04"
